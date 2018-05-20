@@ -9,8 +9,12 @@
     <div class="media-body">
 
         <h1 class="media-heading">{{user.username | uppercase }}</h1>
-        <p>
-            {{user.name}}</p>
+        <p>{{user.name}}</p>
+        <h3>Users posts:</h3>
+        <div ng-repeat="singlePost in posts">
+            <h4>{{ singlePost.title }}</h4>
+            <p>{{ singlePost.body }}</p>
+        </div>
 
         <button class="btn btn-danger" ng-click="deleteUser(user.id)">
             <span class="glyphicon glyphicon-trash"></span>
@@ -21,6 +25,7 @@
         </a>
 
     </div>
+    
 </div>
 
 <div class="alert alert-success" role="alert" ng-if="deletionSuccess">Пока, пользователь!</div>
